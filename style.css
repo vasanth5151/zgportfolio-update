@@ -572,6 +572,9 @@ nav h4{
     }
     .recent-work-title{
       font-size: 30px;
+     
+    
+     
     }
   }
   
@@ -1196,7 +1199,7 @@ footer {
   }
   
   .about_right h2 {
-    font-size: 2rem;
+    font-size: 1.6rem;
     
   }
   
@@ -1217,7 +1220,23 @@ footer {
   .pos9 { bottom: 36%; right: 14%; }
   
 
-  
+  .recent-work-title {
+    font-size: 20px;
+    font-weight: 400;
+    
+  }
+  .recent-work-link {
+    font-size: 16px;
+   
+   
+  }
+  .recent-work-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 60px;
+    padding: 0 0px;
+  }
 
 
 
@@ -1308,22 +1327,30 @@ footer {
     font-size: 2rem;
     text-align: center;
   }
-  .container {
+  /* .container {
     height: 100vh;
+  } */
+  .container {
+    height: 70vh; /* Reduce container height for mobile */
+  }
+  .slider {
+    perspective: 400px; /* Adjust perspective for smaller screens */
   }
   
   .card {
-    width: 65%;
-    height: 40vh;
-  }
-  
-  .copy {
-    padding: 1rem;
-    
+    width: 70%; /* Make cards wider relative to screen */
+    height: 200px; /* Reduce card height */
+    top: 30%; /* Adjust vertical positioning */
   }
   
   .copy-text {
-    font-size: 14px;
+    font-size: 0.7rem; /* Reduce text size */
+  }
+  
+  .copy {
+    top: 15%; /* Adjust copy position */
+    left: 15%; /* Adjust copy position */
+    padding: 0.3rem 0.3rem; /* Reduce padding */
   }
   
   .nav-arrows {
@@ -1371,6 +1398,12 @@ footer {
   .fa-brands{
     padding: 0 5px;
   }
+  .contact-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
 }
 
 

@@ -1295,7 +1295,7 @@ footer {
   }
 
   .marquee_email {
-    font-size: 3.5vw;
+    font-size: 6vw;
     padding: 4vh 0;
   }
 
@@ -1335,6 +1335,11 @@ footer {
   }
   .fa-brands{
     padding: 0 5px;
+  }
+  .contact-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
  }

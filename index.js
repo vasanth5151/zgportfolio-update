@@ -333,6 +333,9 @@ document.addEventListener("click", () => {
 
 
 
+
+
+
  // Scroll to Top BUTTON Functionality
 document.addEventListener('DOMContentLoaded', function() {
   const scrollBtn = document.querySelector('.scroll-top');

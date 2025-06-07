@@ -1462,6 +1462,11 @@ footer {
     height: 30px;
     border-width: 3px;
   }
+  .contact-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   .timeline-year {
     left: -50px;

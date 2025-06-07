@@ -914,6 +914,11 @@ footer {
   .fa-brands{
     padding: 0 5px;
   }
+  .contact-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   
 }
 
