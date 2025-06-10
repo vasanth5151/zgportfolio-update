@@ -410,10 +410,10 @@ textLinks.forEach((link) => {
 
 
 // circle style design
-
 document.addEventListener('DOMContentLoaded', function() {
   const mainCards = document.querySelectorAll('.main-card');
   const subcardsContainer = document.getElementById('subcards-container');
+  const centerText = document.getElementById('center-text'); // Add this ID to your HTML
   
   // Define subcards for each category
   const subcardsData = {
@@ -429,7 +429,6 @@ document.addEventListener('DOMContentLoaded', function() {
     ],
     printing: [
       { title: "ZG photograpgy Frame", img: "assests/zgframe.png" },
-      
     ],
     packaging: [
       { title: "Alpha Packaging", img: "assests/alphapackage.png" },
@@ -447,6 +446,17 @@ document.addEventListener('DOMContentLoaded', function() {
     card.addEventListener('click', function(e) {
       e.stopPropagation();
       const category = this.getAttribute('data-category');
+      
+      // Animate out center text if visible
+      if (centerText.style.opacity !== '0') {
+        gsap.to(centerText, {
+          opacity: 0,
+          duration: 0.3,
+          onComplete: () => {
+            centerText.style.display = 'none';
+          }
+        });
+      }
       
       // Animate out existing subcards if any
       const existingSubcards = subcardsContainer.querySelectorAll('.subcard');
@@ -536,19 +546,36 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
   
-  // Click outside to close subcards
+  // Click outside to close subcards and show center text again
   document.addEventListener('click', function() {
-    subcardsContainer.style.display = 'none';
-    document.querySelectorAll('.main-card').forEach(card => {
-      card.style.zIndex = '5';
-    });
+    if (subcardsContainer.style.display === 'grid') {
+      gsap.to(subcardsContainer.querySelectorAll('.subcard'), {
+        opacity: 0,
+        y: 20,
+        duration: 0.2,
+        stagger: 0.05,
+        onComplete: () => {
+          subcardsContainer.style.display = 'none';
+          // Show center text again
+          centerText.style.display = 'block';
+          gsap.to(centerText, {
+            opacity: 1,
+            duration: 0.3
+          });
+        }
+      });
+      
+      // Reset all cards
+      document.querySelectorAll('.main-card').forEach(card => {
+        card.style.zIndex = '5';
+      });
+    }
   });
   
-  
+  // Prevent subcards container from closing when clicking inside it
   subcardsContainer.addEventListener('click', function(e) {
     e.stopPropagation();
   });
 });
-
 
 

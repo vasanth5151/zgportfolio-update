@@ -499,6 +499,37 @@ nav h4{
 }
 
 
+.center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 5;
+  width: 80%;
+  max-width: 500px;
+  transition: all 0.3s ease;
+}
+
+.center-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.center-text p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Hide center text when subcards are shown */
+.subcards-container.active + .center-text,
+.subcards-container.active ~ .center-text {
+  opacity: 0;
+  visibility: hidden;
+}
+
 
 
 
@@ -575,6 +606,9 @@ nav h4{
      
     
      
+    }
+    .center-text{
+      display: none;
     }
   }
   
