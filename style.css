@@ -52,7 +52,6 @@ a{
 #page1_content{
   width: 100%;
   height: 100%;
-  
   position: relative;
   z-index: 2;
   padding: 2rem;
@@ -592,6 +591,7 @@ nav h4{
     .main-card-inner {
       width: 100%;
       height: 100%;
+      
     }
   
     .services-circle-grid {
@@ -694,7 +694,7 @@ nav h4{
     margin-bottom: 1.5rem;
   }
   .content_text {
-    padding: 1.5rem 0;
+    padding-top: 1.5rem;
   }
   .content_text h3 {
     font-size: 1.8rem;
@@ -714,14 +714,31 @@ nav h4{
     line-height: 1.6;
     color: #fff;
   }
+  .read-more-btn {
+    display: none;
+  }
   
+  /* .rightside_service {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 4rem;
+  } */
+
+
   .rightside_service {
     width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding-left: 4rem;
+    /* Add these new properties */
+    position: relative;
+    transition: transform 0.4s ease;
+    transform: translateY(0); /* Initial position */
   }
+ 
   
   .service_nav {
     font-size: 3rem;
@@ -912,7 +929,7 @@ box-sizing: inherit;
 .copy {
   position: absolute;
   top: 20%;           /* Start from middle */
-  left: 30%;         /* Distance from right */
+  left: 32%;         /* Distance from right */
   transform: none;
   padding: 0.5rem 0.5rem;
   display: flex;
@@ -923,10 +940,6 @@ box-sizing: inherit;
   -webkit-backdrop-filter: blur(10px); /* Safari support */
   border-radius: 10px;
 }
-
-
-
-
 
 
 
@@ -1097,7 +1110,7 @@ footer {
 
 
 /* Responsive Design for tablet */
-@media (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   #page1_content {
     padding: 1.5rem;
   }
@@ -1123,6 +1136,8 @@ footer {
     gap: 0.5rem;
     margin-right: 0;
   }
+
+
   /* services */
   .service_text {
     flex-direction: column;
@@ -1137,6 +1152,9 @@ footer {
 
   .service_text_rightside p {
     font-size: 1.4rem;
+  }
+  .work-category{
+    font-size: 18px;
   }
 
   .show_services {
@@ -1163,35 +1181,96 @@ footer {
     font-size: 1.6rem;
   }
 
-  .content_text p {
-    font-size: 1.1rem;
+  .content_text {
+    padding: 1rem 0;
+    overflow: hidden;
   }
 
-  .fa-arrow-up-right-from-square {
-    font-size: 20px;
+  .truncated-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* Show 4 lines initially */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.4;
+    transition: all 0.3s ease;
+    margin-bottom: 0.5rem;
   }
+
+  .truncated-text.expanded {
+    -webkit-line-clamp: unset;
+    display: block;
+  }
+
+  .read-more-btn {
+    background: transparent;
+    color: #FF5F38;
+    border: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 0.3rem 0;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .read-more-btn::after {
+    content: '↓';
+    margin-left: 0.3rem;
+    font-size: 0.8rem;
+  }
+
+  .read-more-btn.expanded::after {
+    content: '↑';
+  }
+
+
   /* slide images */
+  .firstContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+  background: black;
+  color: #fff;
+  margin-bottom: 0;      /* or reduce it to a smaller value like 10px */
+  padding-bottom: 0;
+  }
 
   .firstContainer h1 {
     font-size: 3rem;
   }
+  .container {
+    height: 60vh; /* Slightly taller than mobile but shorter than desktop */
+  }
+
+  .slider {
+    perspective: 600px; /* More depth than mobile, less than desktop */
+  }
+
   .card {
-    width: 70%;
-    height: 50vh;
+    width: 55%;
+    height: 580px; /* Minimum height */
+    top: 55%;
+    padding-bottom: 2rem; 
   }
-  
-  .copy {
-    padding: 1.5rem;
-  }
-  
+
   .copy-text {
-    font-size: 1.8rem;
+    font-size: 0.9rem; /* Larger than mobile, smaller than desktop */
+    line-height: 1.4; /* Better readability for tablet */
   }
-  
-  .nav-arrow {
-    width: 45px;
-    height: 45px;
+
+  .copy {
+    top: 25%; /* Optimal positioning for tablet */
+    right: 25%;
+    padding: 0.5rem 0.8rem; /* Balanced padding */
   }
+  .social-img{
+    width: 100%;
+    height: 110%;
+    
+  }
+
 }
 
 
@@ -1211,11 +1290,15 @@ footer {
     padding: 1rem;
   }
 
-  .hero_text h1 {
-    font-size: 11vw;
+  .hero_text {
+    margin-bottom: 10vh; /* Adjust this value to move it higher or lower */
     text-align: center;
-  }
-
+}
+.hero_text h1 {
+    font-size: 13vw;
+    font-weight: 700;
+    margin: 0; /* Remove default margins */
+}
   nav h3,
   nav h4 {
     font-size: 1.4rem;
@@ -1302,10 +1385,12 @@ footer {
   .service_text_rightside p {
     font-size: 1.1rem;
   }
+
   
   .show_services {
     flex-direction: column;
     min-height: auto;
+    
   }
   
   /* Sticky image container */
@@ -1322,6 +1407,22 @@ footer {
   .service_content {
     height: 100%;
   }
+
+  .rightside_service {
+    width: 100%;
+    padding-left: 0;
+    margin-top: 2rem; /* Base spacing */
+    transform: none; /* Reset for mobile */
+    transition: margin-top 0.4s ease; /* Animate margin instead */
+    
+  }
+
+  .service_nav {
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+    text-align: left;
+  }
+
   
   .service_content img {
          width: 100%;
@@ -1332,8 +1433,7 @@ footer {
   
   .content_text {
     padding: 1rem 0;
-    max-height: 20vh;
-    overflow-y: auto;
+    
   }
   
   .content_text h3 {
@@ -1345,22 +1445,48 @@ footer {
     font-size: 1rem;
   }
   
-  .rightside_service {
-    width: 100%;
-    padding: 2rem 0 0;
-    margin-top: 1rem;
+  .content_text {
+    padding: 1rem 0;
+    overflow: hidden;
   }
-  
-  .service_nav {
-    font-size: 1.5rem;
+
+  .truncated-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* Show 4 lines initially */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.4;
+    transition: all 0.3s ease;
+    margin-bottom: 0.5rem;
+  }
+
+  .truncated-text.expanded {
+    -webkit-line-clamp: unset;
+    display: block;
+  }
+
+  .read-more-btn {
+    background: transparent;
+    color: #FF5F38;
+    border: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 0.3rem 0;
+    display: inline-block;
     margin-bottom: 1rem;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #333;
   }
-  
-  .fa-arrow-up-right-from-square {
-    font-size: 18px;
+
+  .read-more-btn::after {
+    content: '↓';
+    margin-left: 0.3rem;
+    font-size: 0.8rem;
   }
+
+  .read-more-btn.expanded::after {
+    content: '↑';
+  }
+
 
   /* slide images */
 
@@ -1383,12 +1509,12 @@ footer {
   }
   
   .copy-text {
-    font-size: 0.7rem; /* Reduce text size */
+    font-size: 0.6rem; /* Reduce text size */
   }
   
   .copy {
-    top: 15%; /* Adjust copy position */
-    left: 15%; /* Adjust copy position */
+    top: 21%; /* Adjust copy position */
+    left: 28%;
     padding: 0.3rem 0.3rem; /* Reduce padding */
   }
   
@@ -1404,8 +1530,7 @@ footer {
 
 .social-img{
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+ object-fit: cover;
 }
 
   

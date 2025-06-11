@@ -62,64 +62,111 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
  
-    const navItems = document.querySelectorAll('.service_nav');
-    const contentPanels = document.querySelectorAll('.service_content');
+  const navItems = document.querySelectorAll('.service_nav');
+  const contentPanels = document.querySelectorAll('.service_content');
+  
+  // Initialize GSAP animations
+  gsap.registerPlugin(Flip);
+  
+  // Set up click handlers for each nav item
+  navItems.forEach(item => {
+    item.addEventListener('click', function() {
+      const target = this.dataset.target;
+      
+      // Remove active class from all nav items
+      navItems.forEach(nav => nav.classList.remove('active'));
+      
+      // Add active class to clicked nav item
+      this.classList.add('active');
+      
+      // Get the state before changes
+      const state = Flip.getState(contentPanels, {props: "opacity,visibility"});
+      
+      // Remove active class from all content panels
+      contentPanels.forEach(panel => panel.classList.remove('active'));
+      
+      // Add active class to target content panel
+      const targetPanel = document.querySelector(`.service_content[data-service="${target}"]`);
+      targetPanel.classList.add('active');
 
-    
-    
-    // Initialize GSAP animations
-    gsap.registerPlugin(Flip);
-    
-    // Set up click handlers for each nav item
-    navItems.forEach(item => {
-      item.addEventListener('click', function() {
-        const target = this.dataset.target;
+      
+      // Animate the transition
+      Flip.from(state, {
+        duration: 0.8,
+        ease: "power2.inOut",
+        absolute: true,
+        nested: true,
+        onComplete: () => {
         
-        // Remove active class from all nav items
-        navItems.forEach(nav => nav.classList.remove('active'));
-        
-        // Add active class to clicked nav item
-        this.classList.add('active');
-        
-        // Get the state before changes
-        const state = Flip.getState(contentPanels, {props: "opacity,visibility"});
-        
-        // Remove active class from all content panels
-        contentPanels.forEach(panel => panel.classList.remove('active'));
-        
-        // Add active class to target content panel
-        const targetPanel = document.querySelector(`.service_content[data-service="${target}"]`);
-        targetPanel.classList.add('active');
+          contentPanels.forEach(panel => {
+            if (!panel.classList.contains('active')) {
+              panel.style.position = 'absolute';
+            }
+          });
+        }
+      });
+    });
+  });
+  
+  // Initialize first panel
+  const firstPanel = document.querySelector('.service_content active');
+  if (firstPanel) {
+    firstPanel.style.position = 'relative';
+    firstPanel.style.opacity = '1';
+    firstPanel.style.visibility = 'visible';
+  }
 
-        
-        // Animate the transition
-        Flip.from(state, {
-          duration: 0.8,
-          ease: "power2.inOut",
-          absolute: true,
-          nested: true,
-          onComplete: () => {
+  
+    // Mobile/Tablet Read More functionality
+  function setupReadMore() {
+    if (window.innerWidth <= 1024) {
+      const readMoreBtns = document.querySelectorAll('.read-more-btn');
+      const rightSide = document.querySelector('.rightside_service');
+      
+      // Set initial position (up)
+      rightSide.style.marginTop = '0';
+      
+      readMoreBtns.forEach(btn => {
+        btn.style.display = 'inline-block';
+        btn.addEventListener('click', function() {
+          const text = this.previousElementSibling;
+          text.classList.toggle('expanded');
+          this.classList.toggle('expanded');
           
-            contentPanels.forEach(panel => {
-              if (!panel.classList.contains('active')) {
-                panel.style.position = 'absolute';
-              }
-            });
+          // Calculate needed space
+          const contentText = this.closest('.content_text');
+          const contentHeight = contentText.scrollHeight;
+          
+          // Move rightside down when expanded
+          if (text.classList.contains('expanded')) {
+            rightSide.style.marginTop = `${contentHeight * 0.2}px`;
+            this.textContent = 'Read Less';
+          } else {
+            rightSide.style.marginTop = '0';
+            this.textContent = 'Read More';
           }
         });
       });
-    });
-    
-    // Initialize first panel
-    const firstPanel = document.querySelector('.service_content active');
-    if (firstPanel) {
-      firstPanel.style.position = 'relative';
-      firstPanel.style.opacity = '1';
-      firstPanel.style.visibility = 'visible';
+    } else {
+      // Desktop cleanup
+      document.querySelectorAll('.read-more-btn').forEach(btn => {
+        btn.style.display = 'none';
+      });
+      document.querySelectorAll('.truncated-text').forEach(text => {
+        text.classList.remove('expanded');
+      });
+      document.querySelector('.rightside_service').style.marginTop = '0';
     }
+  }
 
-    
+  // Initialize
+  setupReadMore();
+  window.addEventListener('resize', setupReadMore);
+      
   });
+
+
+
 
 
 
