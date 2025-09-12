@@ -319,6 +319,7 @@ nav h4{
   width: 100%;
   margin: 0 auto;
   height: 130vh;
+  
   /* overflow: hidden; */
   
 }
@@ -403,7 +404,7 @@ nav h4{
     width: 100%;
     height: 100%;
     overflow: hidden;
-    border-radius: 15px;
+    border-radius: 50%;
     transition: all 0.4s ease;
   }
 
@@ -444,6 +445,7 @@ nav h4{
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 50%;
   transition: transform 0.4s ease;
 }
 
@@ -452,28 +454,30 @@ nav h4{
   filter: brightness(0.7);
 }
 .main-card-inner:hover .work-category {
-  bottom: 0;
+ 
   opacity: 1;
-  transform: translateY(0);
+  
 }
 .work-category {
   position: absolute;
-  bottom: -50px; /* Start hidden below */
+  top: 0;
   left: 0;
-  right: 0;
-  text-align: center;
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 18px;
+  width: 100%;
+  height: 100%;
+  display: flex; /* for centering text */
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
   font-weight: bold;
   color: #FF5F38;
-  backdrop-filter: blur(10px);
+
+  backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(10px);
-  padding: 12px;
-  border-radius: 0 0 15px 15px;
-  transition: all 0.4s ease;
+
+  border-radius: 50%;
   opacity: 0;
-  transform: translateY(20px);
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.4s ease;
+
 }
 
 /* Adjusted circular positioning with reduced space */
@@ -557,9 +561,8 @@ nav h4{
     .services-circle {
       width: 100%;
       height: auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
     }
   
     .subcards-container {
@@ -578,19 +581,20 @@ nav h4{
   
     .main-card {
       position: relative;
-      width: 45vw;
-      height: 45vw;
+      width: 43vw;
+      height: 43vw;
       margin: 10px;
       transform: none !important;
       top: auto;
       left: auto;
       margin-left: 0;
-      margin-top: 0;
+     
     }
   
     .main-card-inner {
       width: 100%;
       height: 100%;
+      margin-top: 40px;
       
     }
   
@@ -692,6 +696,7 @@ nav h4{
     max-height: 400px;
     object-fit: cover;
     margin-bottom: 1.5rem;
+    border-radius: 16px;
   }
   .content_text {
     padding-top: 1.5rem;
@@ -929,7 +934,7 @@ box-sizing: inherit;
 .copy {
   position: absolute;
   top: 20%;           /* Start from middle */
-  left: 32%;         /* Distance from right */
+  left: 35%;         /* Distance from right */
   transform: none;
   padding: 0.5rem 0.5rem;
   display: flex;
@@ -1153,8 +1158,8 @@ footer {
   .service_text_rightside p {
     font-size: 1.4rem;
   }
-  .work-category{
-    font-size: 18px;
+  .main-card-inner .work-category{
+    font-size: 20px;
   }
 
   .show_services {
@@ -1262,8 +1267,10 @@ footer {
 
   .copy {
     top: 25%; /* Optimal positioning for tablet */
-    right: 25%;
+    left: 35%;
     padding: 0.5rem 0.8rem; /* Balanced padding */
+    width: 32%;
+    margin-left: 30px;
   }
   .social-img{
     width: 100%;
@@ -1392,6 +1399,13 @@ footer {
     min-height: auto;
     
   }
+  .work-category{
+    font-size: 1.1rem;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+
   
   /* Sticky image container */
   .leftside_service {

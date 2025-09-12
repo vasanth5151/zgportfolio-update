@@ -483,7 +483,7 @@ a{
 .service-img {
   position: absolute;
   width: 140px;
-  height: 140px;
+  height: 120px;
   object-fit: cover;
   border-radius: 15px;
   opacity: 0.7;
@@ -884,20 +884,27 @@ footer {
   }
 
   .services-grid-section {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
     height: auto;
   }
 
   .grid-item {
-    min-height: 250px;
+    min-height: auto; /* remove hard height */
     flex-direction: column;
-    padding: 1.5rem;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  .grid-image {
-    height: 300px;
-    object-fit: cover;
+  .grid-image{
+    width: 100%;
+    aspect-ratio: 16 / 9; /* keep proper rectangle */
+    object-fit: cover;    /* fills box, small crop possible */
+    border-radius: 8px;   /* optional */
   }
+  
 
   .service-title {
     font-size: 2rem;
@@ -1081,7 +1088,6 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
     min-height: 200px;
     text-align: center;
   }
@@ -1101,7 +1107,6 @@ footer {
   }
 
   .grid-image {
-    height: 200px;
     object-fit: cover;
   }
   /* footer */
