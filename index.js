@@ -55,6 +55,58 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+
+
+// Wait for the DOM and GSAP to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+  // Check if SplitText is available
+  if (typeof SplitText === 'undefined') {
+      console.error('SplitText is not loaded. Please check the CDN link.');
+      // Fallback: simple fade-in animation
+      gsap.from(".hero_text h1", {
+          duration: 1.5,
+          opacity: 0,
+          y: 50,
+          ease: "power4.out",
+          delay: 0.5
+      });
+      return;
+  }
+
+  try {
+      // Initialize SplitText for the heading
+      const childSplit = new SplitText(".hero_text h1", {
+          type: "lines",
+          linesClass: "split-child"
+      });
+      
+      const parentSplit = new SplitText(".hero_text h1", {
+          type: "lines",
+          linesClass: "split-parent"
+      });
+
+      // Animate the text lines
+      gsap.from(childSplit.lines, {
+          duration: 1.5,
+          yPercent: 150,
+          ease: "power4.out",
+          stagger: 0.1,
+          delay: 0.4
+      });
+
+  } catch (error) {
+      console.error('Error initializing SplitText:', error);
+      // Fallback animation
+      gsap.from(".hero_text h1", {
+          duration: 1.5,
+          opacity: 0,
+          y: 50,
+          ease: "power4.out",
+          delay: 0.4
+      });
+  }
+});
+
 // services
 
 document.addEventListener('DOMContentLoaded', function() {
