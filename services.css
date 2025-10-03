@@ -6,21 +6,21 @@
     box-sizing: border-box;
    
 }
-@font-face {
-  font-family: myfont;
-  src: url(myfont.ttf);
-}
 
+@font-face {
+  font-family: butler;
+  src: url(Butler.woff) format("woff");
+}
+@font-face {
+  font-family: metropolis;
+  src: url(metropolis.otf);
+}
 body{
-  font-family: var(--primary-font-family);
+ 
   font-optical-sizing: auto;  
   font-family: "myfont"; 
   /* overflow-x: hidden;  */
-  
 
-}
-:root{
-    --primary-font-family : "Inter", sans-serif;
 }
 a{
     text-decoration: none;
@@ -63,7 +63,6 @@ a{
     justify-content: space-between;
     align-items: center;
     color: #fff;
-
     z-index: 3;
   }
   .hero_text {
@@ -76,7 +75,7 @@ a{
     font-weight: 900;
     line-height: 1.2;
     text-align: start;
-    font-family: "myfont", sans-serif;
+    font-family: "butler";
     position: relative;
     color: #fff;
     
@@ -94,14 +93,14 @@ a{
 
   nav h3{
     font-size: 1.6vw;
-    font-family: "myfont";
+    font-family: "butler";
     font-style: normal;
     font-weight: 300;
     cursor: pointer;
   }
   nav h4{
     font-size: 1.6vw;
-    font-family: "myfont";
+    font-family: "butler";
     font-style: normal;
     font-weight: 300;
     cursor: pointer;
@@ -121,10 +120,11 @@ a{
 
 .our-story {
   font-size: clamp(1.5rem, 5vw, 3.5rem);
-  font-weight: 300;
+  font-weight: 400;
   color: #fff;
   margin-top: 20px;
   align-self: flex-start;
+  font-family: "butler";
 }
 
 .dash-line {
@@ -154,11 +154,12 @@ a{
 
 .text-box h1 {
   font-size: clamp(2.5rem, 8vw,5rem);
-  font-weight: 800;
+  font-weight: 500;
   color: #fff;
   line-height: 0.9;
   margin: 0;
   text-transform: uppercase;
+  font-family: "butler";
   transition: transform 0.3s ease, color 0.3s ease;
 }
 .about-text {
@@ -169,8 +170,9 @@ a{
 
 .about-text h1 {
   font-size: clamp(2rem, 5vw, 5rem);
-  font-weight: 600;
+  font-weight: 500;
   color: #fff;
+  font-family: "butler";
   margin: 0;
   text-transform: uppercase;
 }
@@ -268,8 +270,9 @@ a{
 }
 
 .section-title {
-  font-family: "myfont";
-  font-size: 5vw;
+  font-family: "butler";
+  font-size: 4vw;
+  font-weight: 500;
   line-height: 0.9;
   margin-bottom: 2vw;
   color: #FF5F38;
@@ -294,136 +297,28 @@ a{
 }
 
 .service-item h3 {
-  font-family: "myfont";
+  font-family: "butler";
+  font-weight: 500;
   font-size: 2vw;
   color: #FF5F38;
   margin-bottom: 1vw;
 }
 
 .service-item p {
-  font-family: "myfont";
+  font-family: "metropolis";
   font-size: 1.1vw;
   line-height: 1.6;
   opacity: 0.8;
 }
 
 
-/* Services Display Styles brand section */
-/* .services-display {
-  position: relative;
-  width: 100%;
-  height: 130vh;
-  background-color: #0a0a0a;
-  display: flex;
-  justify-content: space-between; 
-  align-items: flex-start;
-  padding: 5% 5%;
-  overflow: hidden;
-  border-radius: 20px;
-}
 .services-display_text{
   color: #FF5F38;
   font-size: 2rem;
   text-align: center;
   padding: 40px;
-}
-.services-display_text span{
-  color: #fff;
-}
-
-.services-list-container {
-  width: 90%;
-  height: 90%;
-  overflow-y: auto;
-  padding-right: 20px; 
-}
-
-.services-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-}
-
-.service-item {
-  position: relative;
-  padding: 15px 0;
-  cursor: pointer;
-  width: 100%;
-  object-fit: cover;
-}
-
-.service-text {
-  font-family: "myfont";
-  font-size: 2.5rem; 
-  color: white;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  display: inline-block;
-  white-space: nowrap;
-}
-
-.plus-icon {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 2.5rem;
-  color: #FF5F38;
-  position: absolute;
-  right: 0;
-  top: 15px;
-  transition: all 0.3s ease;
-}
-
-.underline {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
-}
-
-
-.service-item:hover .service-text {
-  color: #FF5F38;
-  transform: translateX(10px);
-}
-
-.service-item:hover .plus-icon {
-  transform: rotate(45deg);
-}
-
-.service-item:hover .underline {
-  background: rgba(255, 95, 56, 0.5);
-  height: 2px;
-}
-
-.service-image {
-  position: absolute;
-  width: 55%;
-  height: 55%;
-  right: 5%;
-  object-fit: cover;
-  object-position: center;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  z-index: 1;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-.service-image.active {
-  opacity: 1;
-  transform: scale(1);
-} */
-
-
-.services-display_text{
-  color: #FF5F38;
-  font-size: 2rem;
-  text-align: center;
-  padding: 40px;
+  font-family: 'butler';
+  font-weight: 500;
 }
 .services-display_text span{
   color: #fff;
@@ -455,7 +350,8 @@ a{
 }
 
 .service-item {
-  font-family: "myfont", sans-serif;
+  font-family: "butler";
+  font-weight: 400;
   font-size: 1.8rem;
   color: white;
   margin-bottom: 30px;
@@ -517,7 +413,8 @@ a{
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "myfont";
+  font-family: "butler";
+  font-weight: 500;
   font-size: 3rem;
   color: #FF5F38; 
   margin-top: 5rem;
@@ -599,7 +496,8 @@ a{
 }
 
 .service-title {
-  font-family: "myfont";
+  font-family: "butler";
+  font-weight: 500;
   font-size: 2.5rem;
   color: white;
   margin: 0 0 1rem 0;
@@ -608,7 +506,9 @@ a{
 }
 
 .service-desc {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "metropolis";
+  font-size: 18px;
+  padding: 10px 0;
   color: rgba(255,255,255,0.7);
   max-width: 300px;
   text-align: center;
@@ -621,7 +521,6 @@ a{
 footer {
   background: #000000;
   width: 100%;
-  font-family: "myfont";
   overflow: hidden; /* Prevent any overflow */
 }
 
@@ -631,6 +530,7 @@ footer {
   color: #FFFFFF;
   padding: 30px 20px 0;
   box-sizing: border-box;
+  font-family: "butler";
 }
 
 /* Responsive main heading */
@@ -686,6 +586,8 @@ footer {
   padding-bottom: 5px;
   font-size: clamp(1rem, 1.2vw, 20px);
   white-space: nowrap;
+  font-family: "butler";
+  font-weight: 500;
 }.fa-brands{
   padding: 0 5px;
 }
@@ -695,9 +597,11 @@ footer {
 .contact a,
 .visit a {
   cursor: pointer;
-  padding: 4px 4px;
+  padding: 8px 4px;
   font-size: clamp(0.9rem, 1.1vw, 18px);
   display: block;
+  font-family: "metropolis";
+  font-weight: 300;
 }
 .wrapper {
     width: 100vw;

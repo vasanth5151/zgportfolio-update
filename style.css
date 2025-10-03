@@ -7,22 +7,20 @@
    
 }
 @font-face {
-  font-family: myfont;
-  src: url(myfont.ttf);
+  font-family: butler;
+  src: url(Butler.woff) format("woff");
+}
+@font-face {
+  font-family: metropolis;
+  src: url(metropolis.otf);
 }
 
 body{
-  font-family: var(--primary-font-family);
   font-optical-sizing: auto;  
-  font-family: "myfont"; 
   overflow-x: hidden; 
-  
-
 
 }
-:root{
-    --primary-font-family : "Inter", sans-serif;
-}
+
 a{
     text-decoration: none;
     color: inherit;
@@ -33,22 +31,10 @@ a{
 #main{
   width: 100%;
   height: 100vh;
+  background-color: #161515;
 
 }
-#page1{
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
- 
-}
-#page1 video{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  z-index: -1;
-}
+
 #page1_content{
   width: 100%;
   height: 100%;
@@ -75,77 +61,74 @@ a{
   align-items: center;
 }
 
-
-.hero_text h1{
-  font-size: 11vw;
-  font-weight: 900;
-  line-height: 1.2;
-  text-align: center;
-  font-family: "myfont", sans-serif;
-  margin: 0;
-  position: relative;
-  color: #fff;
-  
-  
-}
-.hero_text h1 span {
-  color: #FF5F38; /* Your brand orange */
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
 nav h3{
-  font-size: 1.4vw;
-  font-family: "myfont";
+  font-size: 1.6vw;
+  font-family: "butler";
   font-style: normal;
   font-weight: 300;
   cursor: pointer;
 }
 nav h4{
-  font-size: 1.4vw;
-  font-family: "myfont";
+  font-size: 1.6vw;
+  font-family: "butler";
   font-style: normal;
   font-weight: 300;
   cursor: pointer;
 }
 
 
-/* Position classes for each text */
-.pos1 { top: 13%; left: 10%; }
-.pos2 { top: 20%; right: 8%; }
-.pos3 { top: 50%; left: 8%; }
-.pos4 { bottom: 30%; right: 10%; }
-.pos5 { bottom: 30%; left: 3%; }
-.pos6 { bottom: 10%; right: 15%; }
-.pos7 { top: 20%; left: 30%; }
-.pos8 { bottom: 15%; left: 20%; }
-.pos9 { bottom: 40%; right: 20%; }
+/* lamp style */
+.hero-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 
-.floating-texts {
+.lamp {
+  position: relative;
+  width: 20px;
+  height: 200px;
+}
+.lamp-post{
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 5;
+  padding-bottom: 80px;
+  margin-right: 20%;
+  z-index: 999;
+
 }
 
-.floating-texts a {
-  text-decoration: none;
-  pointer-events: auto;
-}
-
-.animated-text {
+/* Light Beam */
+.lamp-light {
   position: absolute;
-  font-size: 2.2rem;
-  font-weight: bold;
-  color: white;
-  opacity: 0;
-  transform: scale(0.8);
-  transition: all 0.3s ease-out;
-  pointer-events: auto;
-  cursor: pointer;
+  top: 55%;
+  left: 350%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 400px;
+  background: radial-gradient(ellipse at top, rgba(255,255,180,0.8), transparent 70%);
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  opacity: 0; /* off initially */
+  
 }
+
+/* Text */
+.hero_text h1 {
+  margin-top: 80px;
+  font-size: 7rem;
+  font-family: "butler";
+  font-weight: 500;
+  text-align: center;
+  opacity: 0; /* hidden until lamp turns on */
+  transition: opacity 0.6s ease-in-out;
+  color: #fff;
+}
+
+.hero_text span {
+  color: #FF5F38; /* Your brand orange */
+}
+
 
 
 /* Full-page menu styles */
@@ -188,7 +171,7 @@ nav h4{
 .menu-content a {
   color: white;
   font-size: 5vw;
-  font-family: "myfont";
+  font-family: "butler";
   text-decoration: none;
   position: relative;
   transition: color 0.3s ease;
@@ -218,9 +201,9 @@ nav h4{
     display: flex;
     justify-content: space-between;
     padding: 5rem 2rem;
-    gap: 2rem; 
-    /* background: #f8f8f8; */
+    gap: 2rem;
     background: #0f0f0f;
+
     color: #fff;
 }
 
@@ -238,35 +221,35 @@ nav h4{
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    font-family: "myfont";
+    font-family: "butler";
     text-transform: uppercase;
 }
 .about_right h2{
-    font-size: 4.5rem;
-    line-height: 1;
+    font-size: 3.5rem;
+    font-weight: 400; 
     margin-bottom: 1.5rem;
-    font-family: "myfont";
+    font-family: "butler";
     display: inline-block;
   
 }
 .about_right p{
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     line-height: 1.6; 
     margin-bottom: 2rem; 
     padding-top: 0; 
-    font-family: "myfont";
-    font-weight: 500;
+    font-family: "metropolis";
+    font-weight: 400;
 }
 
 .about_right a {
     display: inline-block;
     font-size: 1rem;
-    text-transform: uppercase;
     letter-spacing: 0.1em;
     text-decoration: none;
     border-bottom: 2px solid #fff;
     padding-bottom: 0.5rem;
     transition: all 0.3s ease;
+    font-family: "metropolis";
   }
   /* recent work */
 
@@ -286,11 +269,11 @@ nav h4{
   }
   
   .recent-work-title {
-    font-size: 64px;
-    font-weight: 400;
-    line-height: 1;
+    font-size: 62px;
+    font-weight: 300;
     letter-spacing: -0.02em;
     margin: 0;
+    font-family: "butler";
   }
   
   .recent-work-link {
@@ -303,6 +286,7 @@ nav h4{
     display: inline-block;
     padding-bottom: 8px;
     border-bottom: 1px solid transparent;
+    font-family: "metropolis";
   }
   
   .recent-work-link:hover {
@@ -468,8 +452,8 @@ nav h4{
   justify-content: center;
   align-items: center;
   font-size: 22px;
-  font-weight: bold;
-  color: #FF5F38;
+  font-family: "butler";
+  color: #fff;
 
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(10px);
@@ -517,6 +501,8 @@ nav h4{
 
 .center-text h2 {
   font-size: 2.5rem;
+  font-family: "butler";
+  font-weight: 400;
   margin-bottom: 1rem;
   text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
@@ -524,6 +510,7 @@ nav h4{
 .center-text p {
   font-size: 1.2rem;
   opacity: 0.9;
+  font-family: "metropolis";
 }
 
 /* Hide center text when subcards are shown */
@@ -544,6 +531,7 @@ nav h4{
     
     .recent-work-title {
       font-size: 48px;
+      font-family: "butler";
     }
     
     .work-image {
@@ -607,6 +595,7 @@ nav h4{
     }
     .recent-work-title{
       font-size: 30px;
+      font-family: "butler";
      
     
      
@@ -645,17 +634,24 @@ nav h4{
   .service_text_rightside {
     width: 60%; 
   }
+  .service_text_rightside h2{
+    font-family: "butler";
+    font-weight: 300;
+  }
   
   .service_text_rightside p {
     font-size: 1.5rem;
     line-height: 1.6;
     margin-bottom: 2rem;
     padding-top: 0;
+    font-family: "butler";
+    font-weight: 300;
   }
   
   .service_text_leftside h2 {
     font-size: 1rem;
     line-height: 1.5rem;
+    font-family: "butler";
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -703,14 +699,16 @@ nav h4{
   }
   .content_text h3 {
     font-size: 1.8rem;
-    font-weight: 500;
+    font-family: "butler";
+    font-weight: 400;
     margin-bottom: 1rem;
     letter-spacing: -0.01em;
+    
   }
   
   .content_text p {
-    font-size: 1.1rem;
-    line-height: 1.6;
+    font-size: 1.2rem;
+    font-family: "metropolis";
     color: #555;
   }
   
@@ -742,12 +740,14 @@ nav h4{
     position: relative;
     transition: transform 0.4s ease;
     transform: translateY(0); /* Initial position */
+    
   }
  
   
   .service_nav {
     font-size: 3rem;
-    font-weight: 400;
+    font-family: "butler";
+    font-weight: 300;
     margin-bottom: 1.5rem;
     cursor: pointer;
     position: relative;
@@ -834,10 +834,11 @@ box-sizing: inherit;
   left: 50%;
   transform: translate(-50%, -50%);
   margin: 0;
-  font-family: "myfont";
+  font-family: "butler";
+  font-weight: 300;
   font-size: calc(var(--fontSize) * 1vw);
   font-stretch: 800%;
-  font-weight: 800;
+  font-weight: 300;
   text-transform: uppercase;
   line-height: 1;
   white-space: nowrap;
@@ -847,9 +848,6 @@ box-sizing: inherit;
 .line span{
   color: #FF5F38;
 }
-
-
-
 
 /* social media showcase section */
 
@@ -872,7 +870,8 @@ box-sizing: inherit;
   
 }
 .firstContainer h1{
-  font-family: "myfont";
+  font-family: "butler";
+  font-weight: 300;
   font-size: 4rem;
 
 }
@@ -923,7 +922,7 @@ box-sizing: inherit;
   color: #36454F;
   display: flex;
   justify-content: center;
-  font-family: "myfont";
+  font-family: "butler";
 }
 
 .card img {
@@ -952,7 +951,6 @@ box-sizing: inherit;
 footer {
   background: #000000;
   width: 100%;
-  font-family: "myfont";
   overflow: hidden; /* Prevent any overflow */
 }
 
@@ -968,6 +966,7 @@ footer {
 .footer_header .gravity {
   text-align: center;
   font-weight: 400;
+  font-family: "butler";
   font-size: clamp(4rem, 15vw, 200px); /* Responsive scaling */
   line-height: 0.9;
   margin-bottom: 1rem;
@@ -1013,6 +1012,8 @@ footer {
   padding-bottom: 5px;
   font-size: clamp(1rem, 1.2vw, 20px);
   white-space: nowrap;
+  font-family: "butler";
+  font-weight: 300;
 }
 
 /* All links */
@@ -1021,9 +1022,12 @@ footer {
 .contact a,
 .visit a {
   cursor: pointer;
-  padding: 4px 4px;
+  padding: 8px 4px;
   font-size: clamp(0.9rem, 1.1vw, 18px);
   display: block;
+  font-family: "metropolis";
+  font-weight: 300;
+
 }
 .fa-brands{
   padding: 0 5px;
@@ -1197,9 +1201,10 @@ footer {
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    line-height: 1.4;
+   
     transition: all 0.3s ease;
     margin-bottom: 0.5rem;
+    font-family: "metropolis";
   }
 
   .truncated-text.expanded {

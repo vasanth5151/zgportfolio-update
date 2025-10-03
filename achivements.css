@@ -7,21 +7,18 @@
    
 }
 @font-face {
-  font-family: myfont;
-  src: url(myfont.ttf);
+  font-family: butler;
+  src: url(Butler.woff) format("woff");
 }
-
+@font-face {
+  font-family: metropolis;
+  src: url(metropolis.otf);
+}
 body{
-  font-family: var(--primary-font-family);
-  font-optical-sizing: auto;  
-  font-family: "myfont"; 
   
-  /* overflow-x: hidden;  */
+  font-optical-sizing: auto;  
   
 
-}
-:root{
-    --primary-font-family : "Inter", sans-serif;
 }
 a{
     text-decoration: none;
@@ -95,15 +92,15 @@ a{
 }
 
   nav h3{
-    font-size: 1.4vw;
-    font-family: "myfont";
+    font-size: 1.6vw;
+    font-family: "butler";
     font-style: normal;
     font-weight: 300;
     cursor: pointer;
   }
   nav h4{
-    font-size: 1.4vw;
-    font-family: "myfont";
+    font-size: 1.6vw;
+    font-family: "butler";
     font-style: normal;
     font-weight: 300;
     cursor: pointer;
@@ -124,6 +121,7 @@ a{
 .our-story {
   font-size: clamp(1.5rem, 5vw, 3.5rem);
   font-weight: 300;
+  font-family: "butler";
   color: #fff;
   margin-top: 20px;
   align-self: flex-start;
@@ -156,7 +154,8 @@ a{
 
 .text-box h1 {
   font-size: clamp(2.5rem, 8vw,5rem);
-  font-weight: 800;
+  font-weight: 500;
+  font-family: "butler";
   color: #fff;
   line-height: 0.9;
   margin: 0;
@@ -173,7 +172,8 @@ a{
 
 .about-text h1 {
   font-size: clamp(2rem, 5vw, 5rem);
-  font-weight: 600;
+  font-weight: 500;
+  font-family: "butler";
   color: #fff;
   margin: 0;
   text-transform: uppercase;
@@ -224,6 +224,7 @@ a{
     background-color: rgba(0, 0, 0, 0.95);
     z-index: 999;
     display: none;
+    font-family: "metropolis";
     justify-content: center;
     align-items: center;
     opacity: 0;
@@ -294,9 +295,10 @@ a{
   }
   
   .section-header h2 {
-    /* font-family: 'Bebas Neue', sans-serif; */
-    font-family: "myfont";
-    font-size: 4rem;
+    
+    font-family: "butler";
+    font-weight: 400;
+    font-size: 3.5rem;
     margin-bottom: 15px;
   }
   
@@ -306,6 +308,7 @@ a{
   
   .section-subtitle {
     font-size: 1.2rem;
+    font-family: "metropolis";
     color: #aaa;
     max-width: 600px;
     margin: 0 auto;
@@ -359,6 +362,8 @@ a{
   }
   
   .card-header h3 {
+    font-family: "butler";
+    font-weight: 400;
     font-size: 1.5rem;
     margin: 0;
   }
@@ -371,6 +376,7 @@ a{
     list-style: none;
     padding: 0;
     margin-bottom: 30px;
+   
   }
   
   .achievement-list li {
@@ -378,6 +384,8 @@ a{
     padding-left: 25px;
     margin-bottom: 15px;
     line-height: 1.6;
+    font-family: "metropolis";
+    font-size: 18px;
   }
   
   .achievement-list li::before {
@@ -397,6 +405,7 @@ a{
     margin-top: 30px;
     padding-top: 20px;
     border-top: 1px solid #222;
+    font-family: "metropolis";
   }
   
   .stat-item {
@@ -405,14 +414,13 @@ a{
   
   .number {
     display: block;
-    font-family: 'Bebas Neue', sans-serif;
     font-size: 2rem;
     color: #FF5F38;
     line-height: 1;
   }
   
   .label {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #aaa;
   }
   
@@ -452,11 +460,10 @@ a{
 }
 
 .achievements-section2 h2 {
-  font-family: "myfont", sans-serif; /* Match your brand font */
+ font-family: "butler";
   font-size: 3.5rem;
   font-weight: 300;
   color: #fff;
-  text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 3rem;
   position: relative;
@@ -491,6 +498,7 @@ a{
   display: flex;
   flex-direction: column;
   gap: 40px;
+  font-family: "metropolis";
 }
 
 .achievement-card {
@@ -519,6 +527,8 @@ a{
 }
 
 .achievement-content h2 {
+  font-family: "butler";
+  font-weight: 400;
   font-size: 2rem;
   margin-bottom: 20px;
   text-transform: uppercase;
@@ -527,16 +537,16 @@ a{
 }
 
 .achievement-content p {
-  
+  font-family: "metropolis";
   line-height: 1.6;
   margin-bottom: 30px;
   opacity: 0.9;
-  font-family: "myfont", sans-serif;
   font-size: 18px;
 }
 
 .cta-button {
   display: inline-flex;
+  font-family: "metropolis";
   align-items: center;
   gap: 10px;
   font-size: 1.1rem;
@@ -616,6 +626,7 @@ a{
 .section-header h5 {
   color: #FF5F38;
   font-size: 1.2rem;
+  font-family: "butler";
   text-transform: uppercase;
   letter-spacing: 3px;
   margin-bottom: 1rem;
@@ -623,7 +634,8 @@ a{
 
 .section-header h2 {
   font-size: 3rem;
-  font-weight: 700;
+  font-weight: 500;
+  font-family: "butler";
   margin-bottom: 1.5rem;
   line-height: 1.2;
 }
@@ -635,6 +647,7 @@ a{
 .section-subtitle {
   color: rgba(255,255,255,0.7);
   font-size: 1.2rem;
+  font-family: "metropolis";
 }
 
 /* Collaboration Grid */
@@ -684,6 +697,7 @@ a{
   color: black;
   padding: 0.3rem 1rem;
   border-radius: 50px;
+  font-family: "metropolis";
   font-weight: 600;
   font-size: 0.9rem;
 }
@@ -694,6 +708,8 @@ a{
 
 .collab-content h3 {
   font-size: 1.5rem;
+  font-family: "butler";
+  font-weight: 500;
   margin-bottom: 1rem;
   color: white;
 }
@@ -702,12 +718,15 @@ a{
   color: rgba(255,255,255,0.7);
   line-height: 1.6;
   margin-bottom: 1.5rem;
+  font-family: "metropolis";
+  font-size: 18px;
 }
 
 .collab-stats {
   display: flex;
   gap: 1.5rem;
   margin-top: 1.5rem;
+  font-family: "metropolis";
 }
 
 .collab-stats li {
@@ -741,6 +760,7 @@ a{
   align-items: center;
   gap: 0.5rem;
   transition: color 0.3s ease;
+  font-family: "metropolis";
 }
 
 .case-study-link:hover {
@@ -756,17 +776,18 @@ a{
   display: inline-block;
   padding: 1rem 2rem;
   background: transparent;
+  font-family: "butler";
   color: #FF5F38;
   border: 2px solid #FF5F38;
   border-radius: 50px;
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
 .view-all-btn:hover {
   background: #FF5F38;
-  color: black;
+  color: #fff;
 }
 
 
@@ -786,11 +807,13 @@ a{
 
 .highlight {
   color: #FF5F38;
+  font-family: "butler";
 }
 
 .section-subtitle {
   color: rgba(255,255,255,0.7);
   font-size: 1.2rem;
+  font-family: "metropolis";
 }
 
 /* Timeline Container */
@@ -853,6 +876,7 @@ a{
   height: 80px;
   border-radius: 50%;
   background: #FF5F38;
+  font-family: "metropolis";
   color: black;
   display: flex;
   align-items: center;
@@ -910,12 +934,15 @@ a{
 .timeline-content h3 {
   font-size: 1.5rem;
   margin-bottom: 10px;
-  color: white;
+  color: #FF5F38;
+  font-family: "butler";
+  font-weight: 500;
 }
 
 .timeline-content p {
   color: rgba(255,255,255,0.7);
   line-height: 1.6;
+  font-family: "metropolis";
 }
 
 
@@ -923,7 +950,6 @@ a{
 footer {
   background: #000000;
   width: 100%;
-  font-family: "myfont";
   overflow: hidden; /* Prevent any overflow */
 }
 
@@ -940,6 +966,7 @@ footer {
   text-align: center;
   font-weight: 400;
   font-size: clamp(4rem, 15vw, 200px); /* Responsive scaling */
+  font-family: "butler";
   line-height: 0.9;
   margin-bottom: 1rem;
 }
@@ -984,6 +1011,8 @@ footer {
   padding-bottom: 5px;
   font-size: clamp(1rem, 1.2vw, 20px);
   white-space: nowrap;
+  font-family: "butler";
+  font-weight: 300;
 }
 .fa-brands{
   padding: 0 5px;
@@ -995,9 +1024,11 @@ footer {
 .contact a,
 .visit a {
   cursor: pointer;
-  padding: 4px 0;
+  padding: 8px 4px;
   font-size: clamp(0.9rem, 1.1vw, 18px);
   display: block;
+  font-family: "metropolis";
+  font-weight: 300;
 }
   .wrapper {
     width: 100vw;

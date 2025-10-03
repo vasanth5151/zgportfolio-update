@@ -55,6 +55,38 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+// herosection lamp
+window.addEventListener("DOMContentLoaded", () => {
+  const lampLight = document.querySelector(".lamp-light");
+  const heroText = document.querySelector(".hero_text h1");
+
+  // Auto ON after load
+  gsap.to(lampLight, {
+    opacity: 1,
+    duration: 1.5,
+    delay: 0.5,
+    ease: "power2.inOut"
+  });
+
+  gsap.to(heroText, {
+    opacity: 1,
+    duration: 1.5,
+    delay: 1,
+    y: -20,
+    ease: "power3.out"
+  });
+
+  // Toggle ON/OFF with click
+  document.querySelector(".lamp").addEventListener("click", () => {
+    if (lampLight.style.opacity === "1") {
+      gsap.to(lampLight, { opacity: 0, duration: 0.8 });
+      gsap.to(heroText, { opacity: 0, duration: 0.8 });
+    } else {
+      gsap.to(lampLight, { opacity: 1, duration: 1 });
+      gsap.to(heroText, { opacity: 1, duration: 1 });
+    }
+  });
+});
 
 
 
@@ -417,40 +449,3 @@ document.addEventListener('DOMContentLoaded', function() {
   
   rotate();
 });
-
-
-
-
-
-
-// floating-texts animation
-let currentText = null;
-
-const textLinks = document.querySelectorAll('.floating-texts a');
-
-textLinks.forEach((link) => {
-  const textEl = link.querySelector('.animated-text');
-
-  link.addEventListener('mouseenter', () => {
-    // Hide previously active text
-    if (currentText && currentText !== textEl) {
-      gsap.to(currentText, { opacity: 0, scale: 0.8, duration: 0.3, ease: "power2.in" });
-    }
-
-    // Show new hovered text
-    gsap.to(textEl, { opacity: 1, scale: 1, duration: 0.6, ease: "power2.out" });
-    currentText = textEl;
-  });
-
-  link.addEventListener('mouseleave', () => {
-    gsap.to(textEl, { opacity: 0, scale: 0.8, duration: 0.4, ease: "power2.in" });
-    
-    // Only clear if it's the same
-    if (currentText === textEl) {
-      currentText = null;
-    }
-  });
-});
-
-
-
