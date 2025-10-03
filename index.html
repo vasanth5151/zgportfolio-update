@@ -7,7 +7,11 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" type="image/x-icon" href="assests/logo-zerogravity.webp">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="
+https://cdn.jsdelivr.net/npm/splittext@2.0.0/splitText.min.js
+"></script>
+    
     <meta name="google-site-verification" content="QiVIow4gHIAFiYdVwWVK6qEEeLekDNWVi5BOySWHH-A" />
 
     <!-- Google tag (gtag.js) -->
@@ -19,6 +23,7 @@
 
       gtag('config', 'G-ZCHRPLWTPK');
     </script>
+  
     
 </head>
 <body>
@@ -70,12 +75,12 @@
         <div class="about_right">
             <h2 id="about_head_text">Crafting Extraordinary Experiences Across Technology, Digital Marketing, Event Management, Printing & Designing</h2>
 
-                <p>Welcome to Zero Gravity Group, a collective of pioneering brands that redefine excellence across creative,
+                <p id="animated_paragraph1">Welcome to Zero Gravity Group, a collective of pioneering brands that redefine excellence across creative,
                   lifestyle, and digital industries. From world-renowned wedding photography to cutting-edge digital solutions,
                   immersive event décor, gourmet catering, sustainable packaging, and beyond — we are the architects 
                   of elevated experiences. Explore a universe where artistry, technology, and craftsmanship converge.</p>
 
-                <a href="about.html">LEARN MORE ABOUT US</a>
+                <a href="about.html" id="animated_paragraph2">LEARN MORE ABOUT US</a>
 
         </div>
 
@@ -161,7 +166,7 @@
           <div class="service_text_leftside">
             <h2>our services</h2>
           </div>
-          <div class="service_text_rightside">
+          <div class="service_text_rightside" id="animated">
             <h2>Premium Services Across Diverse Verticals — Tailored to Perfection.</h2>
             <p>At Zero Gravity Group, our services span across artistry, technology, design, and lifestyle. Each brand is a 
               specialized force backed by passion, expertise, and a commitment to creating extraordinary value.
@@ -240,7 +245,7 @@
 
             <div class="service_content active" data-service="tech">
               <img src="assests/zgtech.webp" alt="Technology Services">
-              <div class="content_text">
+              <div class="content_text" id="animatedtech">
                 <h3>Zerogravity Technologies <a href="https://zerogravitytechnologies.com/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></h3>
                 <p class="truncated-text">At Zero Gravity Technologies, we engineer intelligent software that solves real-world business problems. Our services span full-stack web development, mobile app creation, and enterprise tech consulting. We specialize in building scalable, secure, and user-friendly digital infrastructures tailored to your business goals.
                   </p>

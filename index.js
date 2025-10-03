@@ -107,6 +107,78 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+
+
+
+window.addEventListener("load", function() {
+  const paragraph1 = document.querySelector("#animated_paragraph1");
+  const paragraph2 = document.querySelector("#about_head_text");
+  const paragraph3 = document.querySelector("#animated_paragraph2");
+  const paragraph4 = document.querySelector("#animated");
+  const paragraph5 = document.querySelector("#animatedtech");
+
+  gsap.from(paragraph1, {
+    duration: 1.5,
+    opacity: 0,
+    y: 50,
+    ease: "power4.out",
+    scrollTrigger: {
+      trigger: paragraph1,      // the element that triggers the animation
+      start: "top 80%",        // when top of paragraph hits 80% of viewport height
+      toggleActions: "play none none none", // play animation only once
+    }
+  });
+
+  gsap.from(paragraph2, {
+    duration: 1.5,
+    opacity: 0,
+    y: 50,
+    ease: "power4.out",
+    scrollTrigger: {
+      trigger: paragraph2,      // the element that triggers the animation
+      start: "top 80%",        // when top of paragraph hits 80% of viewport height
+      toggleActions: "play none none none", // play animation only once
+    }
+  });
+
+  gsap.from(paragraph3, {
+    duration: 1.5,
+    opacity: 0,
+    y: 50,
+    ease: "power4.out",
+    scrollTrigger: {
+      trigger: paragraph3,      // the element that triggers the animation
+      start: "top 80%",        // when top of paragraph hits 80% of viewport height
+      toggleActions: "play none none none", // play animation only once
+    }
+  });
+
+  gsap.from(paragraph4, {
+    duration: 1.5,
+    opacity: 0,
+    y: 50,
+    ease: "power4.out",
+    scrollTrigger: {
+      trigger: paragraph4,      // the element that triggers the animation
+      start: "top 80%",        // when top of paragraph hits 80% of viewport height
+      toggleActions: "play none none none", // play animation only once
+    }
+  });
+
+  gsap.from(paragraph5, {
+    duration: 1.5,
+    opacity: 0,
+    y: 50,
+    ease: "power4.out",
+    scrollTrigger: {
+      trigger: paragraph5,      // the element that triggers the animation
+      start: "top 80%",        // when top of paragraph hits 80% of viewport height
+      toggleActions: "play none none none", // play animation only once
+    }
+  });
+});
+
+
 // services
 
 document.addEventListener('DOMContentLoaded', function() {
