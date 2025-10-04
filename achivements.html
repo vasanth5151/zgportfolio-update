@@ -74,7 +74,7 @@
         <p class="section-subtitle">Milestones across our diverse ventures</p>
       </div>
     
-      <div class="achievements-grid">
+      <div class="achievements-grid" id="achievement_animate_text1">
         <!-- Tech -->
         <div class="achievement-card tech">
           <div class="card-header">
@@ -221,7 +221,7 @@
 
       <!-- Add this to your existing HTML -->
 <div class="achievements-section2">
-  <h2>Our Experiences</h2>
+  <h2 id="achievement_animate_text2">Our Experiences</h2>
   <div class="achievements-container">
     <!-- Column 1 -->
     <div class="achievement-col">
@@ -262,13 +262,13 @@
 
  <!-- our collabration -->
  <section class="collaborations-section">
-  <div class="section-header">
+  <div class="section-header" id="achievement_animate_text3">
     <h5>Strategic Partnerships</h5>
     <h2>Our <span class="highlight">Top Collaborations</span></h2>
     <p class="section-subtitle">Working with industry leaders to create extraordinary results</p>
   </div>
 
-  <div class="collab-grid">
+  <div class="collab-grid" id="achievement_animate_text4">
     <!-- Collaboration Card 1 -->
     <div class="collab-card">
       <div class="collab-header">
@@ -731,10 +731,67 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   rotate();
+
+  // splittext animate
+  const achievement_animate_text1 = document.querySelector('#achievement_animate_text1');
+  const achievement_animate_text2 = document.querySelector('#achievement_animate_text2');
+  const achievement_animate_text3 = document.querySelector('#achievement_animate_text3');
+  const achievement_animate_text4 = document.querySelector('#achievement_animate_text4');
+
+
+  gsap.from(achievement_animate_text1, {
+    duration: 1.5,
+    opacity: 0,
+    y: 50,
+    ease: "power4.out",
+    scrollTrigger: {
+      trigger: achievement_animate_text1,      // the element that triggers the animation
+      start: "top 80%",        // when top of paragraph hits 80% of viewport height
+      toggleActions: "play none none none", // play animation only once
+    }
+  });
+
+  gsap.from(achievement_animate_text2, {
+    duration: 1.5,
+    opacity: 0,
+    y: 50,
+    ease: "power4.out",
+    scrollTrigger: {
+      trigger: achievement_animate_text2,      // the element that triggers the animation
+      start: "top 80%",        // when top of paragraph hits 80% of viewport height
+      toggleActions: "play none none none", // play animation only once
+    }
+  });
+
+  gsap.from(achievement_animate_text3, {
+    duration: 1.5,
+    opacity: 0,
+    y: 50,
+    ease: "power4.out",
+    scrollTrigger: {
+      trigger: achievement_animate_text3,      // the element that triggers the animation
+      start: "top 80%",        // when top of paragraph hits 80% of viewport height
+      toggleActions: "play none none none", // play animation only once
+    }
+  });
+
+  gsap.from(achievement_animate_text4, {
+    duration: 1.5,
+    opacity: 0,
+    y: 50,
+    ease: "power4.out",
+    scrollTrigger: {
+      trigger: achievement_animate_text4,      // the element that triggers the animation
+      start: "top 80%",        // when top of paragraph hits 80% of viewport height
+      toggleActions: "play none none none", // play animation only once
+    }
+  });
+
 });
 
       </script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/SplitText.min.js"></script>
 
     
 </body>

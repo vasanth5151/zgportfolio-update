@@ -69,7 +69,7 @@
       
       <div class="services-intro">
         
-        <h2 class="section-title">What services <br>we're offering</h2>
+        <h2 class="section-title" id="service_animate_text1">What services <br>we're offering</h2>
         <div class="accent-line"></div>
         <img src="assests/3dwedding.webp" alt="" class="services_image">
       </div>
@@ -82,7 +82,7 @@
      
         <div class="service-item">
           <h3>01/ Zerogravity Technology</h3>
-          <p>We engineer seamless digital ecosystems that break the bounds of convention.
+          <p id="service_animate_text2">We engineer seamless digital ecosystems that break the bounds of convention.
              Our full-stack development solutions combine cutting-edge innovation with unmatched precision—transforming
             ambitious business goals into scalable, future-ready realities.</p>
         </div>
@@ -90,13 +90,13 @@
         
         <div class="service-item">
           <h3>02/ Zerogravity Digital</h3>
-          <p>Where creativity meets code, we craft high-performance digital experiences that transcend expectations. From immersive interfaces to responsive platforms, our solutions are designed for speed, engagement, and limitless brand elevation.</p>
+          <p id="service_animate_text3">Where creativity meets code, we craft high-performance digital experiences that transcend expectations. From immersive interfaces to responsive platforms, our solutions are designed for speed, engagement, and limitless brand elevation.</p>
         </div>
         
         
         <div class="service-item">
           <h3>03/ Zerogravity Event Management</h3>
-          <p>Love knows no limits—and neither does our storytelling. With cinematic artistry and a signature gravity-defying style, we capture your most cherished moments through visuals that feel timeless, ethereal, and emotionally profound.</p>
+          <p id="service_animate_text4">Love knows no limits—and neither does our storytelling. With cinematic artistry and a signature gravity-defying style, we capture your most cherished moments through visuals that feel timeless, ethereal, and emotionally profound.</p>
         </div>
       </div>
     </div>
@@ -636,10 +636,70 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
   rotate();
+
+
+// animated text on scroll
+  const service_animate_text1 = document.querySelector("#service_animate_text1");
+  const service_animate_text2 = document.querySelector("#service_animate_text2");
+  const service_animate_text3 = document.querySelector("#service_animate_text3");
+  const service_animate_text4 = document.querySelector("#service_animate_text4");
+  
+
+  gsap.from(service_animate_text1, {
+    duration: 1.5,
+    opacity: 0,
+    y: 50,
+    ease: "power4.out",
+    scrollTrigger: {
+      trigger: service_animate_text1,      // the element that triggers the animation
+      start: "top 80%",        // when top of paragraph hits 80% of viewport height
+      toggleActions: "play none none none", // play animation only once
+    }
+  });
+
+  gsap.from(service_animate_text2, {
+    duration: 1.5,
+    opacity: 0,
+    y: 50,
+    ease: "power4.out",
+    scrollTrigger: {
+      trigger: service_animate_text2,      // the element that triggers the animation
+      start: "top 80%",        // when top of paragraph hits 80% of viewport height
+      toggleActions: "play none none none", // play animation only once
+    }
+  });
+
+  gsap.from(service_animate_text3, {
+    duration: 1.5,
+    opacity: 0,
+    y: 50,
+    ease: "power4.out",
+    scrollTrigger: {
+      trigger: service_animate_text3,      // the element that triggers the animation
+      start: "top 80%",        // when top of paragraph hits 80% of viewport height
+      toggleActions: "play none none none", // play animation only once
+    }
+  });
+
+  gsap.from(service_animate_text4, {
+    duration: 1.5,
+    opacity: 0,
+    y: 50,
+    ease: "power4.out",
+    scrollTrigger: {
+      trigger: service_animate_text4,      // the element that triggers the animation
+      start: "top 80%",        // when top of paragraph hits 80% of viewport height
+      toggleActions: "play none none none", // play animation only once
+    }
+  });
+
+  
+
 });
 
       </script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/SplitText.min.js"></script>
     
 </body>
 </html>
