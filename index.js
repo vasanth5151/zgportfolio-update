@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-// Wait for the DOM and GSAP to be fully loaded
+// GSAP to be fully loaded animation
 document.addEventListener('DOMContentLoaded', function() {
   // Check if SplitText is available
   if (typeof SplitText === 'undefined') {
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-
+// GSAP to be fully loaded animation on scroll
 
 window.addEventListener("load", function() {
   const paragraph1 = document.querySelector("#animated_paragraph1");
@@ -116,6 +116,7 @@ window.addEventListener("load", function() {
   const paragraph3 = document.querySelector("#animated_paragraph2");
   const paragraph4 = document.querySelector("#animated");
   const paragraph5 = document.querySelector("#animatedtech");
+  const paragraph6 = document.querySelector("#center-text");
 
   gsap.from(paragraph1, {
     duration: 1.5,
@@ -172,6 +173,18 @@ window.addEventListener("load", function() {
     ease: "power4.out",
     scrollTrigger: {
       trigger: paragraph5,      // the element that triggers the animation
+      start: "top 80%",        // when top of paragraph hits 80% of viewport height
+      toggleActions: "play none none none", // play animation only once
+    }
+  });
+
+  gsap.from(paragraph6, {
+    duration: 1.5,
+    opacity: 0,
+    y: 50,
+    ease: "power4.out",
+    scrollTrigger: {
+      trigger: paragraph6,      // the element that triggers the animation
       start: "top 80%",        // when top of paragraph hits 80% of viewport height
       toggleActions: "play none none none", // play animation only once
     }

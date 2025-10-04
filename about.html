@@ -71,7 +71,7 @@
       <h2 class="our_story_text">About Us</h2>
 
         <div class="top_story">
-          <h5>Ajay’s journey into photography began as a spontaneous passion that soon evolved into a lifelong calling.
+          <h5 id="about_animate_text1">Ajay’s journey into photography began as a spontaneous passion that soon evolved into a lifelong calling.
              Originally trained as an engineer, he discovered his true creative spirit behind the lens—where precision met
               imagination. Today, Ajay is not only a renowned photographer but also a driven entrepreneur, an avid traveler, and a devoted car enthusiast. With an exceptional eye for detail and a bold creative vision, 
             he continues to push boundaries, capturing stories that transcend the ordinary and celebrate the extraordinary.</h5>
@@ -82,7 +82,7 @@
             <img src="assests/zg_fullimage.jpg" alt="">
             <div class="about_zg">
               <h3>About Zerogravity Photography</h3>
-              <h5>Founded in late 2012 by two visionary creatives, Ajay Ben and Vikas Alagarsamy, Zero Gravity Photography was
+              <h5 id="about_animate_text2">Founded in late 2012 by two visionary creatives, Ajay Ben and Vikas Alagarsamy, Zero Gravity Photography was
                  born from a shared passion for authentic storytelling through the lens. With a dream of turning creativity into
                   a meaningful career, they set out to capture life’s most unforgettable moments in their rawest, most beautiful form. Believing that the best stories are told without words, they found weddings
                  to be the perfect canvas—where every emotion, glance, and celebration becomes a timeless visual narrative.</h5>
@@ -97,18 +97,18 @@
 
     <div class="vision">
         <h5>Vision & Mission</h5>
-        <h2>Zerogravity the furture of enterpernship</h2>
+        <h2 id="about_animate_text5">Zerogravity the furture of enterpernship</h2>
 
         <div class="vision_flexbox">
             <div class="sub_vision">
               <img src="assests/vision_img2.webp" alt="vision logo">
-              <h5>To become a premier, full-service wedding photography studio that offers end-to-end creative solutions for clients around the world. At Zero Gravity Photography, we strive to combine the talent of passionate professionals
+              <h5 id="about_animate_text3">To become a premier, full-service wedding photography studio that offers end-to-end creative solutions for clients around the world. At Zero Gravity Photography, we strive to combine the talent of passionate professionals
                  with the latest technology to produce visual content that deeply resonates with our audience.</h5>
 
             </div>
             <div class="sub_mission">
               
-              <h5>Our mission is to elevate creative storytelling by offering personalized photography experiences that authentically reflect each client’s personality and emotion. We aim to capture natural expressions and unforgettable moments through our 
+              <h5 id="about_animate_text4">Our mission is to elevate creative storytelling by offering personalized photography experiences that authentically reflect each client’s personality and emotion. We aim to capture natural expressions and unforgettable moments through our 
                 photography and videography services—preserving every detail and emotion to create memories that last a lifetime.</h5>
                  <img src="assests/mission_img.webp" alt="mission logo">
 
@@ -133,7 +133,7 @@
     <div id="team">
       <div class="team_header">
         <h5>Leadership</h5>
-        <h2 class="team_h2">Visionary Minds Driving Hospitality Excellence</h2>
+        <h2 class="team_h2" id="about_animate_text6">Visionary Minds Driving Hospitality Excellence</h2>
       </div>
     
       <div class="team_member">
@@ -147,7 +147,7 @@
         </div>
     
         <div class="team_content">
-          <p>Ajay’s journey into photography began as a spontaneous passion that soon evolved into a lifelong calling. 
+          <p id="about_animate_text7">Ajay’s journey into photography began as a spontaneous passion that soon evolved into a lifelong calling. 
             Originally trained as an engineer, he discovered his true creative spirit behind the lens—where precision met
              imagination. Today, Ajay is not only a renowned photographer but also a driven entrepreneur, an avid traveler,
               and a devoted car enthusiast. With an exceptional eye for detail and a bold creative vision,
@@ -534,10 +534,110 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   rotate();
+
+// Split the text once
+  console.clear();
+  const animate_text1 = document.getElementById("about_animate_text1");
+  const animate_text2 = document.getElementById("about_animate_text2");
+  const animate_text3 = document.getElementById("about_animate_text3");
+  const animate_text4 = document.getElementById("about_animate_text4");
+  const animate_text5 = document.getElementById("about_animate_text5");
+  const animate_text6 = document.getElementById("about_animate_text6");
+  const animate_text7 = document.getElementById("about_animate_text7");
+  
+  gsap.from(animate_text1, {
+    duration: 1.5,
+    opacity: 0,
+    y: 60,
+    ease: "power4.out",
+    scrollTrigger: {
+      trigger: animate_text1,      // the element that triggers the animation
+      start: "top 80%",        // when top of paragraph hits 80% of viewport height
+      toggleActions: "play none none none", // play animation only once
+    }
+  });
+
+  gsap.from(animate_text2, {
+    duration: 1.5,
+    opacity: 0,
+    y: 60,
+    ease: "power4.out",
+    scrollTrigger: {
+      trigger: animate_text2,      // the element that triggers the animation
+      start: "top 80%",        // when top of paragraph hits 80% of viewport height
+      toggleActions: "play none none none", // play animation only once
+    }
+  });
+
+  gsap.from(animate_text3, {
+    duration: 1.5,
+    opacity: 0,
+    y: 60,
+    ease: "power4.out",
+    scrollTrigger: {
+      trigger: animate_text3,      // the element that triggers the animation
+      start: "top 80%",        // when top of paragraph hits 80% of viewport height
+      toggleActions: "play none none none", // play animation only once
+    }
+  });
+
+  gsap.from(animate_text4, {
+    duration: 1.5,
+    opacity: 0,
+    y: 60,
+    ease: "power4.out",
+    scrollTrigger: {
+      trigger: animate_text4,      // the element that triggers the animation
+      start: "top 80%",        // when top of paragraph hits 80% of viewport height
+      toggleActions: "play none none none", // play animation only once
+    }
+  });
+
+  gsap.from(animate_text5, {
+    duration: 1.5,
+    opacity: 0,
+    y: 60,
+    ease: "power4.out",
+    scrollTrigger: {
+      trigger: animate_text5,      // the element that triggers the animation
+      start: "top 80%",        // when top of paragraph hits 80% of viewport height
+      toggleActions: "play none none none", // play animation only once
+    }
+  });
+
+  gsap.from(animate_text6, {
+    duration: 1.5,
+    opacity: 0,
+    y: 60,
+    ease: "power4.out",
+    scrollTrigger: {
+      trigger: animate_text6,      // the element that triggers the animation
+      start: "top 80%",        // when top of paragraph hits 80% of viewport height
+      toggleActions: "play none none none", // play animation only once
+    }
+  });
+
+
+  gsap.from(animate_text7, {
+    duration: 1.5,
+    opacity: 0,
+    y: 60,
+    ease: "power4.out",
+    scrollTrigger: {
+      trigger: animate_text7,      // the element that triggers the animation
+      start: "top 80%",        // when top of paragraph hits 80% of viewport height
+      toggleActions: "play none none none", // play animation only once
+    }
+  });
+
+
 });
+
+
 
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://assets.codepen.io/16327/SplitText3.min.js"></script>
       
     
 </body>
