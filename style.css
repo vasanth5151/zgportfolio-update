@@ -32,9 +32,9 @@ a{
   width: 100%;
   height: 100vh;
   background-color: #161515;
+  position: relative;
 
 }
-
 
 #page1_content {
   width: 100%;
@@ -83,22 +83,12 @@ nav h4{
   font-family: "butler";
   font-weight: 500;
   text-align: center;
-  position: relative;
   overflow: hidden;
   color: #fff;
 }
 
 .hero_text span {
   color: #FF5F38; /* Your brand orange */
-}
-  /* Split Text Classes */
-  .split-parent {
-    overflow: hidden;
-    display: inline-block;
-}
-
-.split-child {
-    display: inline-block;
 }
 
 
@@ -1264,8 +1254,8 @@ footer {
     overflow-x: hidden;
   }
   #main,
-  #aboputpage1 {
-    height: auto;
+  #aboputpage1 {          
+    height: 80vh;       
     overflow-x: hidden;
   }
 
@@ -1274,13 +1264,20 @@ footer {
   }
 
   .hero_text {
-    margin-bottom: 10vh; /* Adjust this value to move it higher or lower */
-    text-align: center;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
 }
 .hero_text h1 {
     font-size: 13vw;
-    font-weight: 700;
-    margin: 0; /* Remove default margins */
+    font-weight: 500;
+    text-align: center;
+ 
+    
+    
 }
   nav h3,
   nav h4 {
