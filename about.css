@@ -315,7 +315,7 @@ a{
 /* vision */
 .vision{
     width: 100%;
-    padding-top: 15vh;
+    padding-top: 10vh;
     font-family: "myfont";
     background-color:#1E1E1E;
     color: #FF5F38;
@@ -360,8 +360,8 @@ a{
 
 .sub_vision img,
 .sub_mission img {
-  width: 450px;
-  height: auto;
+  width: 500px;
+  height: 350px;
   border-radius: 12px;
   object-fit: cover;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);

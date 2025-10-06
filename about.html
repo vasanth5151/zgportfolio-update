@@ -101,16 +101,17 @@
 
         <div class="vision_flexbox">
             <div class="sub_vision">
-              <img src="assests/vision_img2.webp" alt="vision logo">
-              <h5 id="about_animate_text3">To become a premier, full-service wedding photography studio that offers end-to-end creative solutions for clients around the world. At Zero Gravity Photography, we strive to combine the talent of passionate professionals
-                 with the latest technology to produce visual content that deeply resonates with our audience.</h5>
+              <img src="assests/vision_img2.webp" alt="vision logo" id="vision_animate_text4">
+              <h5 id="about_animate_text3">To become a globally recognized, full-service wedding photography studio known for transforming moments into timeless visual stories. At Zero Gravity Photography, our vision is to combine artistic excellence with cutting-edge technology, delivering experiences that celebrate love, culture, and emotion. We aim to inspire creativity, set new standards in wedding storytelling, and build lasting connections with 
+                clients across the world through our dedication, innovation, and passion for visual artistry.</h5>
 
             </div>
             <div class="sub_mission">
               
-              <h5 id="about_animate_text4">Our mission is to elevate creative storytelling by offering personalized photography experiences that authentically reflect each client’s personality and emotion. We aim to capture natural expressions and unforgettable moments through our 
-                photography and videography services—preserving every detail and emotion to create memories that last a lifetime.</h5>
-                 <img src="assests/mission_img.webp" alt="mission logo">
+              <h5 id="about_animate_text4">At Zero Gravity Photography, our mission is to transform every wedding and
+                 special occasion into a timeless visual story. We are committed to providing personalized photography and videography experiences that reflect each client’s unique personality, emotions, and journey. Through careful attention to detail, creative vision, and the latest technology, we capture natural expressions, candid moments, and meaningful interactions. Our goal is to preserve memories authentically 
+                and beautifully, allowing clients to relive their most cherished moments for a lifetime.</h5>
+                 <img src="assests/mission_img.webp" alt="mission logo" id="mision_animate_text4">
 
             </div>
         </div>
@@ -544,6 +545,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const animate_text5 = document.getElementById("about_animate_text5");
   const animate_text6 = document.getElementById("about_animate_text6");
   const animate_text7 = document.getElementById("about_animate_text7");
+  const animate_text8 = document.getElementById("vision_animate_text4");
+  const animate_text9 = document.getElementById("mision_animate_text4");
   
   gsap.from(animate_text1, {
     duration: 1.5,
@@ -625,6 +628,30 @@ document.addEventListener('DOMContentLoaded', function() {
     ease: "power4.out",
     scrollTrigger: {
       trigger: animate_text7,      // the element that triggers the animation
+      start: "top 80%",        // when top of paragraph hits 80% of viewport height
+      toggleActions: "play none none none", // play animation only once
+    }
+  });
+
+  gsap.from(animate_text8, {
+    duration: 1.5,
+    opacity: 0,
+    y: 60,
+    ease: "power4.out",
+    scrollTrigger: {
+      trigger: animate_text8,      // the element that triggers the animation
+      start: "top 80%",        // when top of paragraph hits 80% of viewport height
+      toggleActions: "play none none none", // play animation only once
+    }
+  });
+
+  gsap.from(animate_text9, {
+    duration: 1.5,
+    opacity: 0,
+    y: 60,
+    ease: "power4.out",
+    scrollTrigger: {
+      trigger: animate_text9,      // the element that triggers the animation
       start: "top 80%",        // when top of paragraph hits 80% of viewport height
       toggleActions: "play none none none", // play animation only once
     }
