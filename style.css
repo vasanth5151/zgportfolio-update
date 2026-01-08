@@ -194,7 +194,7 @@ nav h4{
   
 }
 .about_right p{
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     line-height: 1.6; 
     margin-bottom: 2rem; 
     padding-top: 0; 
@@ -573,7 +573,11 @@ nav h4{
 .our_services {
     
     /* margin: 6rem auto 0; */
-    padding: 7rem 2rem;
+    /* padding: 8rem 2rem; */
+    padding-top: 10rem;
+    padding-bottom: 4rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     background: #0f0f0f;
     color: #fff;
 
@@ -601,7 +605,7 @@ nav h4{
   }
   
   .service_text_rightside p {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     line-height: 1.6;
     margin-bottom: 2rem;
     padding-top: 0;
