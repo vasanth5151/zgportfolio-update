@@ -143,13 +143,14 @@ nav h4{
 }
 
 #close-menu {
-  position: absolute;
-  top: -20px;
-  right: 0;
+  position: fixed;
+  top: 2rem; 
+  right: 2rem;
   color: white;
   font-size: 3rem;
   cursor: pointer;
   transition: color 0.3s ease;
+  z-index: 1000;
 }
 
 #close-menu:hover {
