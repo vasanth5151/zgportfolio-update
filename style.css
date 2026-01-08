@@ -568,14 +568,12 @@ nav h4{
     }
   }
   
-
-
 /* services */
 
 .our_services {
     
     /* margin: 6rem auto 0; */
-    padding: 5rem 2rem;
+    padding: 7rem 2rem;
     background: #0f0f0f;
     color: #fff;
 
@@ -631,6 +629,7 @@ nav h4{
   .leftside_service {
     width: 40%;
     position: relative;
+   
   }
   
   .service_content {
@@ -676,7 +675,7 @@ nav h4{
   }
   
   .service_content p {
-    font-size: 1.2rem;
+    font-size: 1.2rem;  
     line-height: 1.6;
     color: #fff;
   }
